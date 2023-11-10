@@ -1,3 +1,8 @@
+# What is this good for?
+TODO
+
+# State of project:
+First working breaktrough between client and server; don't use it yet!
 ## How to build:
 The server-image is also the common image. First, build the server image:
  `docker build . -t  janpdevops/rsyncbackup-common`
