@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+   rsync_client:
+      image:  janpdevops/rsyncbackup-client
+      volumes:
+         - type: bind
+           source: C:\nobackup\keystuff
+           target: /data/sshkeys
+         - type: bind
+           source: C:\Users\jan\Documents\projects\rsync2backup\
+           target: /upload
+         
