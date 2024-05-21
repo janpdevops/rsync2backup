@@ -13,6 +13,6 @@ if ! [ -f ssh_key ]; then
 	echo "Now create the server part"
 else 
 # upload the files
-	 rsync -av --delete -e "ssh -i /data/sshkeys/ssh_key  -o \"StrictHostKeyChecking no\"  -p 2222 " /upload transfer@172.26.192.1:/data
+ 	 rsync -av --delete -e "ssh -i /data/sshkeys/ssh_key  -o \"StrictHostKeyChecking no\"  -p ${RSYNC_PORT} " /upload transfer@${RSYNC_SERVER}:/data
 fi
 # create add-user-skript, pass it to rsync-server

@@ -3,9 +3,13 @@ version: "3.8"
 services:
    rsync_client:
       image:  janpdevops/rsyncbackup-client
+      container_name: rsyncbackup-client
+      environment:
+       - RSYNC_SERVER=172.26.192.1
+       - RSYNC_PORT=2222       
       volumes:
          - type: bind
-           source: C:\nobackup\keystuff
+           source: C:\nobackup\client\keystuff
            target: /data/sshkeys
          - type: bind
            source: C:\Users\jan\Documents\projects\rsync2backup\
