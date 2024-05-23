@@ -1,0 +1,8 @@
+      - SUDO_ACCESS=false 
+      - USER_NAME=#USER_NAME#
+    volumes:
+      - C:\nobackup\servertest\config:/config
+      - C:\nobackup\servertest\transfer_target:/data
+    ports:
+      - #RSYNC_PORT#:2222
+    restart: unless-stopped

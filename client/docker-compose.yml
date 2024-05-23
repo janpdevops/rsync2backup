@@ -6,10 +6,12 @@ services:
       container_name: rsyncbackup-client
       environment:
        - RSYNC_SERVER=172.26.192.1
-       - RSYNC_PORT=2222       
+       - RSYNC_PORT=2002
+       - USER_NAME=new
+       - RSYNC_UID=2002      
       volumes:
          - type: bind
-           source: C:\nobackup\client\keystuff
+           source: C:\nobackup\clienttest\keystuff
            target: /data/sshkeys
          - type: bind
            source: C:\Users\jan\Documents\projects\rsync2backup\
