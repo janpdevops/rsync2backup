@@ -5,9 +5,11 @@ TODO
 First working breaktrough between client and server; don't use it yet!
 ## How to build:
 The server-image is also the common image. First, build the server image:
- `docker build . -t  janpdevops/rsyncbackup-common`
+ `docker build . -t  janpdev/rsyncbackup-common:v0.1`
  Then, you  can build the client image:
- `docker build . -t  janpdevops/rsyncbackup-client` 
+ `docker build . -t  janpdev/rsyncbackup-client:v0.1` 
+ 
+(Upload via docker push  janpdev/rsyncbackup-common:v0.1 )
 
 ## Create the client keys
 Go to the client directory and run
