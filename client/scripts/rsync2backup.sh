@@ -37,9 +37,14 @@ if  [[ -d .ssh && -f .ssh/known_hosts ]]; then
 	cp -r .ssh ~
 	STRICT_HOST_CHECKING="yes"
 fi
-
+	if (( $PUSH > 0 )); then
 # upload the files
-# 1s stage ingnore host checking TODO probably check for know-hosts and save it in the key folder
- 	rsync -av --delete -e "ssh -i /data/sshkeys/ssh_key  -o \"StrictHostKeyChecking ${STRICT_HOST_CHECKING}\"  -p ${RSYNC_PORT} " /upload ${USER_NAME}@${RSYNC_SERVER}:/data
-	cp -r ~/.ssh .
+# 1st stage ignore host checking TODO probably check for know-hosts and save it in the key folder
+	echo Rsync in push mode
+		rsync -av --delete -e "ssh -i /data/sshkeys/ssh_key  -o \"StrictHostKeyChecking ${STRICT_HOST_CHECKING}\"  -p ${RSYNC_PORT} " /upload ${USER_NAME}@${RSYNC_SERVER}:/data
+		cp -r ~/.ssh .
+	else 
+		echo Rsync in pull mode
+		rsync -av -e "ssh -i /data/sshkeys/ssh_key  -o \"StrictHostKeyChecking ${STRICT_HOST_CHECKING}\"  -p ${RSYNC_PORT} "${USER_NAME}@${RSYNC_SERVER}:/data  /upload 
+	fi
 fi

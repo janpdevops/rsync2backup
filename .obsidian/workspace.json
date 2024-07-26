@@ -1,0 +1,188 @@
+{
+  "main": {
+    "id": "11ad78cb7396df81",
+    "type": "split",
+    "children": [
+      {
+        "id": "40459a164f861f21",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f3db80d4b83080ba",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "blah/Rationale.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "1d10b3487a267488",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.5.12"
+              }
+            }
+          },
+          {
+            "id": "cc85c351603f612d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "blah/Rationale.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ],
+        "currentTab": 2
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "eb8508199334d8b2",
+    "type": "split",
+    "children": [
+      {
+        "id": "bb07f8bffa7666ac",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ae6c3b46047a9f8e",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "b77a46f4c7bf92c0",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "5a94cf1fdeddf75b",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "5983d6baad35928b",
+    "type": "split",
+    "children": [
+      {
+        "id": "874c58e58005ec43",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "2cbbff20685bbcee",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "blah/Rationale.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "e5fdc403bd2b8c16",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "blah/Rationale.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "d8ae0ac40b45e92b",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "52c45c731a8fd0a2",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "blah/Rationale.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Schnellauswahl öffnen": false,
+      "graph:Graphen-Ansicht öffnen": false,
+      "canvas:Neuen Canvas erstellen": false,
+      "daily-notes:Heutige Notiz öffnen": false,
+      "templates:Vorlage einfügen": false,
+      "command-palette:Befehlspalette öffnen": false
+    }
+  },
+  "active": "cc85c351603f612d",
+  "lastOpenFiles": [
+    "Rsync-Backup.md",
+    "VPN.md",
+    "China",
+    "client/scripts/adduser-template.sh",
+    "client/scripts/docker-compose-template.yml",
+    "blah/backup-circle-gpg.odg",
+    "blah/lu33544g2fl4.tmp",
+    "blah/lu33544g2fl1.tmp",
+    "blah/lu33544g2fky.tmp",
+    "blah/lu33544g2fkv.tmp",
+    "blah/backup-circle.odg",
+    "blah/lu33544g2fks.tmp",
+    "blah/Rationale.md"
+  ]
+}
