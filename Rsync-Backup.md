@@ -1,5 +1,18 @@
 # What is this good for?
-TODO
+`rsync2backup` is a first step toward a simple, cross-platform backup solution.
+
+The goal of this project is to synchronize the contents of a local filesystem (e.g., on a notebook, desktop computer, or server)
+with a remote filesystem (the backup destination) via `rsync` over SSH.
+
+The core ideas:
+* **Cross-platform**: The client and server each run as Docker containers. This means it doesn't matter whether you run the rsync client on Windows, Linux, or macOS – all you need is a working Docker or Docker Compose installation. The actual synchronization happens inside the container using standard Linux tools (`rsync`, `ssh`).
+* **Client/Server Architecture**:
+  * The **Client** (`client/`) connects to the server via SSH/`rsync` and uploads files from a mounted `upload` directory (push mode) or downloads them (pull mode).
+  * The **Server** (`server/`) is based on an `openssh-server` image with `rsync` installed and handles incoming client connections. Access is controlled exclusively via SSH public-key authentication.
+* **Easy Setup**: On first run, the client automatically generates an SSH key pair and a matching `docker-compose.yml` for the server, so the public key is ready for server-side deployment.
+* **Repeatable Synchronization**: After initial setup, a simple `docker compose up` on the client side synchronizes the configured directories with the server (including deleting files no longer present in push mode via `rsync --delete`).
+
+In short: A lightweight, containerized rsync-over-SSH setup that serves as a first step toward a complete, operating-system-independent backup solution.
 
 # State of project:
 First working breaktrough between client and server; don't use it yet!
