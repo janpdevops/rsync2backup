@@ -2,7 +2,7 @@
 version: "2.1"
 services:
   openssh-server:
-    image:  janpdevops/rsyncbackup-common:latest
+    image:  janpdev/rsyncbackup-common:v0.1
     container_name: rsyncbackup-server-#USER_NAME#
     hostname: rsyncbackup-server-#USER_NAME#
     environment:

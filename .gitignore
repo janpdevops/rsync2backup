@@ -1,0 +1,14 @@
+.idea/
+.obsidian/
+.env
+.env.local
+*.swp
+*.swo
+*~
+ssh_key
+ssh_key.pub
+public/
+known_hosts
+.DS_Store
+Thumbs.db
+

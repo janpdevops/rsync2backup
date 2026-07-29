@@ -207,9 +207,10 @@ try {
     # -- Client run #2: initial sync ---------------------------------------
     Invoke-Client 'Client run #2 -- initial push' @('--network', $network)
 
-    # Verify: rsync source `/upload` (no trailing slash) is transferred as a
-    # subdirectory into `/data`, giving `/data/upload/...` on the server.
-    $syncedRoot = Join-Path $serverData 'upload'
+    # Verify: rsync source `/upload/` (with trailing slash) is transferred into
+    # `/data/` (with trailing slash), giving `/data/...` on the server
+    # (not `/data/upload/...` like the old behavior).
+    $syncedRoot = Join-Path $serverData ''
     Info "Verifying initial sync in: $syncedRoot"
     Assert-FileExists (Join-Path $syncedRoot 'hello.txt')          "hello.txt on server"
     Assert-FileExists (Join-Path $syncedRoot 'subdir\nested.txt')  "subdir/nested.txt on server"

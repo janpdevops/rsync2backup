@@ -1,21 +1,22 @@
----
-version: "2.1"
+version: "3"
 services:
   openssh-server:
-    image:  janpdev/rsyncbackup-common:v0.1
+    image: linuxserver/openssh-server:latest
     container_name: rsyncbackup-server
-    hostname: openssh-server #optional
+    hostname: rsyncbackup-server
     environment:
-      - PUID=1000
-      - PGID=1000
+      - PUID=${PUID:-1000}
+      - PGID=${PGID:-1000}
       - TZ=Etc/UTC
-      - PUBLIC_KEY_DIR=/keys
-      - SUDO_ACCESS=false 
+      - PUBLIC_KEY_DIR=${PUBLIC_KEY_DIR:-./keys}
+      - SUDO_ACCESS=false
       - USER_NAME=transfer
     volumes:
-      - C:\nobackup\server\config:/config
-      - C:\nobackup\server\transfer_target:/data
-      - C:\nobackup\server\keystuff\public:/keys
+      - ${SERVER_CONFIG_DIR:-.}/config:/config
+      - ${SERVER_DATA_DIR:-.}/data:/data
+      - ${PUBLIC_KEY_DIR:-.}/keys:/keys
     ports:
-      - 2001:2222
+      - ${RSYNC_PORT:-2222}:2222
     restart: unless-stopped
+
+

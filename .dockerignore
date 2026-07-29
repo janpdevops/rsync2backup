@@ -1,0 +1,12 @@
+.git
+.gitignore
+.dockerignore
+.idea
+.obsidian
+.env
+.env.local
+*.md
+tests/
+Dockerfile*
+docker-compose*.yml
+

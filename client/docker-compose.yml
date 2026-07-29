@@ -1,20 +1,22 @@
-version: "3.8"
-
 services:
    rsync_client:
-      image:  janpdev/rsyncbackup-client:v0.11
+      image: janpdev/rsyncbackup-client:v0.1
       container_name: rsyncbackup-client
       environment:
-       - RSYNC_SERVER=172.26.192.1
-       - RSYNC_PORT=2001
-       - USER_NAME=transfer
-       - RSYNC_UID=2001
-       - PUSH=1
+        - RSYNC_SERVER=${RSYNC_SERVER}
+        - RSYNC_PORT=${RSYNC_PORT}
+        - USER_NAME=${USER_NAME}
+        - RSYNC_UID=${RSYNC_UID}
+        - RSYNC_GID=${RSYNC_GID}
+        - PUSH=${PUSH:-1}
+        - SERVER_CONFIG_DIR=${SERVER_CONFIG_DIR:-/data/config}
+        - SERVER_DATA_DIR=${SERVER_DATA_DIR:-/data/transfer_target}
       volumes:
-         - type: bind
-           source: C:\nobackup\clienttest\keystuff
-           target: /data/sshkeys
-         - type: bind
-           source: C:\Users\jan\Documents\projects\rsync2backup\
-           target: /upload
-         
+        - type: bind
+          source: ${KEY_DIR:-.}/sshkeys
+          target: /data/sshkeys
+        - type: bind
+          source: ${SOURCE_DIR:-.}/data
+          target: /upload
+          read_only: true
+
